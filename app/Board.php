@@ -10,4 +10,8 @@ class Board extends Model{
        'user_id',
    ];
     protected $guarded=[];
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
