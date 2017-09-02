@@ -48,7 +48,7 @@ class BoardController extends Controller
     public function update(Request $request,$boardId)
     {
         $board=Board::find($boardId);
-        if(Auth::user()->id!==$board->user_id) //Auth::user() is not working
+        if(Auth::user()->id!==$board->user_id) //i have also tried this app('Illuminate\Contracts\Auth\Guard')->user()
         {
             return response()->json(['status'=>'error','message'=>'unauthorized'],401);
         }
